@@ -34,7 +34,7 @@ const BrandLogoTwo = () => {
     <div
       className="dg__brand__area pt--90"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/6.jpg"})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/4.jpg"})`,
         //backgroundRepeat: `no-repeat`
       }}
     >
@@ -43,10 +43,8 @@ const BrandLogoTwo = () => {
           <div className="col-sm-12">
             {/* section title */}
             <SectionTitleThree
-              title="We work Together"
-              text="There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour."
+              title="Nous travaillons ensemble"
+              text="Nos partenaires participent comme vous au financement de cette nouvelle crypto-monnaie"
             />
           </div>
         </div>

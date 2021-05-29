@@ -23,5 +23,45 @@
     "id": "5",
     "image": "/images/brand/5.png",
     "url": "/"
+  },
+  {
+    "id": "6",
+    "image": "/images/brand/6.png",
+    "url": "/"
+  },
+  {
+    "id": "7",
+    "image": "/images/brand/7.png",
+    "url": "/"
+  },
+  {
+    "id": "8",
+    "image": "/images/brand/8.png",
+    "url": "/"
+  },
+  {
+    "id": "9",
+    "image": "/images/brand/9.png",
+    "url": "/"
+  },
+  {
+    "id": "10",
+    "image": "/images/brand/10.png",
+    "url": "/"
+  },
+  {
+    "id": "11",
+    "image": "/images/brand/11.png",
+    "url": "/"
+  },
+  {
+    "id": "12",
+    "image": "/images/brand/12.png",
+    "url": "/"
+  },
+  {
+    "id": "13",
+    "image": "/images/brand/13.png",
+    "url": "/"
   }
 ]

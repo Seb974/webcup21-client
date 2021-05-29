@@ -22,6 +22,15 @@ const BlogPostContent = () => {
       setPrice((p + number)*farm.partPrice);
     }    
   }
+  const handleChange = ({currentTarget}) => {
+    const val = (currentTarget.value == undefined) ?  0 : currentTarget.value;
+    
+    console.log(currentTarget.value);
+    const p = (parseFloat(currentTarget.value) <= (totalPart - partUsed)) ? parseFloat(currentTarget.value) : 0;
+    setPartLock(p);
+    setPrice(p*farm.partPrice);
+  }
+
   return (
     <div className="dg__blog__area bg--white section-padding--xl">
       <div className="container">
@@ -55,11 +64,12 @@ const BlogPostContent = () => {
                         </div>
                         <input
                           ref={inputPart}
-                          type="number"
+                          type="text"
                           className="form-control text-center"
                           value={partLock}
                           aria-label="Username"
                           aria-describedby="basic-addon1"
+                          onChange={handleChange}
                         />
                         <span
                           className="input-group-text btn btn-dark rounded-0"
@@ -87,7 +97,9 @@ const BlogPostContent = () => {
                           €
                         </span>
                       </div>
-                      <div className="mb-2">
+                      <div className="mb-2">  
+                      <span className="text-success"> Part vendu : {partUsed} </span>
+                      <span className="text-dark">- Part restant : {totalPart - partUsed - partLock} </span>
                         <ProgressBar>
                           <ProgressBar
                             striped
@@ -95,9 +107,9 @@ const BlogPostContent = () => {
                             now={(partUsed*100/totalPart)}
                             key={1}
                           />
-                          <ProgressBar variant="warning" now={partLock*100/totalPart} key={2} />
+                          <ProgressBar variant="secondary" now={partLock*100/totalPart} key={2} />
                         </ProgressBar>
-                        {partLock > 0 && <p class="fs-6 text-secondary mb-0">La bar jaune sont les parts que vous êtes en train de réserver</p> }
+                        {partLock > 0 && <span className="fs-6 text-dark mb-0">La barre grise représente les parts que vous êtes en train de réserver</span> }
                       </div>
                       <button className="btn btn-dark"> Investir </button>
                     </form>
@@ -109,7 +121,7 @@ const BlogPostContent = () => {
               <table className="table table-striped px-3">
                 <thead>
                   <tr>
-                    <th className="px-4" scope="col" colspan="4">
+                    <th className="px-4" scope="col" colSpan="4">
                       Description
                     </th>
                   </tr>
@@ -132,7 +144,7 @@ const BlogPostContent = () => {
                       {" "}
                       Coût investissement total
                     </th>
-                    <td>{farm.investmentCost + " Millions"}</td>
+                    <td>{farm.investmentCost + " €"}</td>
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">
@@ -146,7 +158,7 @@ const BlogPostContent = () => {
                       {" "}
                       Type de puissance{" "}
                     </th>
-                    <td>{farm.power}</td>
+                    <td>{farm.power} </td> 
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">
@@ -160,7 +172,7 @@ const BlogPostContent = () => {
                       {" "}
                       Bénéfice %{" "}
                     </th>
-                    <td>{"+" + farm.profitPercent + " %"}</td>
+                    <td className="text-success">{"+" + farm.profitPercent + " %"}</td>
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">

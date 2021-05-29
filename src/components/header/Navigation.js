@@ -89,7 +89,7 @@ const Navigation = () => {
             </li>
             <li>
               <Link to={process.env.PUBLIC_URL + "/login-register"}>
-                Login / Register
+                Connexion / S'enregistrer
               </Link>
             </li>
             {/* <li>
