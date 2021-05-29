@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import MetaTags from "react-meta-tags";
 import LayoutTwo from "../layouts/LayoutTwo";
 import BlogGridTwo from "../containers/blog-grids/BlogGridTwo";
@@ -9,8 +9,13 @@ import LiveChartTwo from "../components/live-chart/LiveChartTwo";
 import HowWorks from "../components/how-works/HowWorks";
 import CurrencyCalculationTwo from "../components/currency-calculations/CurrencyCalculationTwo";
 import HeroSliderFour from "../containers/hero-sliders/HeroSliderFour";
+import Map from "../components/map/Map";
+import FarmContext from "../contexts/FarmContext";
 
 const HomeFour = () => {
+
+  const { farms } = useContext(FarmContext);
+
   return (
     <Fragment>
       <MetaTags>
@@ -30,6 +35,7 @@ const HomeFour = () => {
         {/* work process */}
         <WorkProcess />
         {/* counter up */}
+        <Map displayedRelaypoints={ farms }/>
         <CounterUp backgroundImage="/images/bg/4.jpg" />
         {/* currency calculation */}
         <CurrencyCalculationTwo />
