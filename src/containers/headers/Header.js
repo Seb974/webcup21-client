@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Logo from "../../components/header/Logo";
 import Navigation from "../../components/header/Navigation";
 import HeaderBtn from "../../components/header/HeaderBtn";
 import MobileMenu from "../../components/header/MobileMenu";
+import AuthContext from "../../contexts/AuthContext";
 
 const Header = ({ theme }) => {
   const [scroll, setScroll] = useState(0);
   const [headerTop, setHeaderTop] = useState(0);
+  const { isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     const header = document.querySelector("header");
@@ -43,6 +45,7 @@ const Header = ({ theme }) => {
           </div>
           <div className="col-lg-3 col-xl-2 col-6">
             {/* header buttons */}
+            
             <HeaderBtn />
           </div>
         </div>
