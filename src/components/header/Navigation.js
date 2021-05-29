@@ -29,13 +29,13 @@ const Navigation = () => {
         </li>
         <li className="drop">
           <Link to={process.env.PUBLIC_URL + "/blog"}>
-            News 
+            Nos fermes 
             {/* <IoIosArrowDown /> */}
           </Link>
         </li>
         <li className="drop">
           <Link to={process.env.PUBLIC_URL + "/service"}>
-            Service <IoIosArrowDown />
+            Le Mimit'Coin <IoIosArrowDown />
           </Link>
           <ul className="dropdown">
             <li>

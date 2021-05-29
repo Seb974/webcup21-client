@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../components/header/Logo";
 import Navigation from "../../components/header/Navigation";
 import HeaderBtn from "../../components/header/HeaderBtn";
@@ -23,6 +24,7 @@ const Header = ({ theme }) => {
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
+  console.log(theme);
   return (
     <header
       className={`dg__header header--absolute space-right-left ${
@@ -37,7 +39,7 @@ const Header = ({ theme }) => {
               image={
                 theme === "white" ? "/images/logo/2.png" : "/images/logo/1.png"
               }
-            /> */} <h2 className="text-white fs-2 text">Teamimit.re</h2>
+            /> */}  <Link to={process.env.PUBLIC_URL + "/"}><h2 className="text-white fs-2 text">Teamimit.re</h2></Link>
           </div>
           <div className="col-lg-7 col-xl-8 d-none d-lg-block">
             {/* navigation */}

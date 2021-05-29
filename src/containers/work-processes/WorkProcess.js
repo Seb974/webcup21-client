@@ -5,12 +5,12 @@ import WorkProcessSingle from '../../components/work-processes/WorkProcessSingle
 
 const WorkProcess = () => {
   return (
-    <div className="dg__working__process pb--120 pt--130 bg--white">
+    <div className="dg__working__process pb--120 pt--130 bg-bleu">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             {/* section title */}
-            <SectionTitleTwo title="Working Process" />
+            <SectionTitleTwo title="Comment ça marche ?" />
           </div>
         </div>
         <div className="row mt--10">

@@ -5,7 +5,7 @@ const SoftwareDownloadTwo = () => {
     <section
       className="dg__software__area dg__software--2 section-padding--xl"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/5.jpg"})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/12.jpg"})`,
         backgroundRepeat: `no-repeat`
       }}
     >

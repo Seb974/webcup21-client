@@ -21,10 +21,10 @@ const HeroSliderFourSingle = ({ data }) => {
               <h1>{data.title}</h1>
               <p>{data.text}</p>
               <Link
-                className="slide__btn dg__btn btn--white"
+                className="slide__btn dg__btn "
                 to={process.env.PUBLIC_URL + data.url}
               >
-                Learn More
+                Découvrir le bitcoin réunnionnais
               </Link>
             </div>
           </div>

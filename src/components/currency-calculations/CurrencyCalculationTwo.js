@@ -15,10 +15,9 @@ const CurrencyCalculationTwo = () => {
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="content">
-              <h2>Todays Converter</h2>
+              <h2>Taux de convertion</h2>
               <p className="first">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form.
+                Avec notre simulateur, regardez la valeur monaitaire des différentes cryptomonnaie en direct.
               </p>
               <p>
                 There are many variations of passages of Lorem Ipsum available,

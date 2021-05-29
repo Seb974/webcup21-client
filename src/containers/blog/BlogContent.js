@@ -18,13 +18,6 @@ const BlogContent = () => {
                 </Link>
               </div>
               <div className="content">
-                <div className="bl__author">
-                  <img src="images/blog/sm-img/1.png" alt="author images" />
-                  <div className="author__inner">
-                    <h6>Farhan</h6>
-                    <span>16 Feb, 2020</span>
-                  </div>
-                </div>
                 <h2>
                   <Link to={process.env.PUBLIC_URL + "/blog-post"}>
                     Large Mining Farm Discovered in Abandoned Russian Factory
@@ -51,16 +44,7 @@ const BlogContent = () => {
                 </Link>
               </div>
               <div className="content">
-                <div className="bl__author">
-                  <img
-                    src={process.env.PUBLIC_URL + "/images/blog/sm-img/2.png"}
-                    alt="author images"
-                  />
-                  <div className="author__inner">
-                    <h6>Alex</h6>
-                    <span>16 Feb, 2020</span>
-                  </div>
-                </div>
+
                 <h2>
                   <Link to={process.env.PUBLIC_URL + "/blog-post"}>
                     Phasellus semper felisnon imperdiet varius.
@@ -87,16 +71,6 @@ const BlogContent = () => {
                 </Link>
               </div>
               <div className="content">
-                <div className="bl__author">
-                  <img
-                    src={process.env.PUBLIC_URL + "/images/blog/sm-img/1.png"}
-                    alt="author images"
-                  />
-                  <div className="author__inner">
-                    <h6>Maria</h6>
-                    <span>16 Feb, 2020</span>
-                  </div>
-                </div>
                 <h2>
                   <Link to={process.env.PUBLIC_URL + "/blog-post"}>
                     World’s Central Bank: Crypto Could Risk Bank Runs

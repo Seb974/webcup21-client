@@ -20,10 +20,10 @@ const HomeFour = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Howard | Home Four</title>
+        <title>Accueil</title>
         <meta
           name="description"
-          content="Homepage of React JS Crypto Currency Template."
+          content="Bienvenue sur teamimit.re. votre site de cryptomonnaie"
         />
       </MetaTags>
       <LayoutTwo theme="white">
@@ -32,7 +32,7 @@ const HomeFour = () => {
         {/* how works */}
         <HowWorks />
         {/* live chart */}
-        <LiveChartTwo />
+        {/* <LiveChartTwo /> */}
         {/* work process */}
         <WorkProcess />
         {/* counter up */}
@@ -50,6 +50,7 @@ const HomeFour = () => {
         <SoftwareDownloadTwo />
         {/* blog grid */}
         <BlogGridTwo />
+        <Map displayedRelaypoints={ farms }/>
       </LayoutTwo>
     </Fragment>
   );

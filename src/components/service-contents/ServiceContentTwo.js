@@ -8,8 +8,8 @@ const ServiceContentTwo = () => {
           <div className="col-lg-7 col-md-12 col-sm-12 col-12">
             <div className="dg__secure__inner">
               <h2 className="title__with__border">
-                This Currency is most Secure. Cryptocurrency is awesome for
-                secure transaction.
+                Une devise plus sûr, La crypto-monnaie est géniale pour
+                les transactions sécurisées.
               </h2>
               <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
