@@ -16,7 +16,7 @@ const BlogPost = () => {
       </MetaTags>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
-        <Breadcrumb title="NEWS DETAILS" />
+        <Breadcrumb title="Ferme de minage" />
         {/* blog post content */}
         <BlogPostContent />
       </LayoutTwo>

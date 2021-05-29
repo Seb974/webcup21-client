@@ -1,0 +1,20 @@
+{
+    "name": "CAP DEMETER",
+    "city": "string",
+    "position": [
+      "string"
+    ],
+    "zipcode": "string",
+    "address": "string",
+    "address2": "string",
+    "description": "<p>Promoteur&nbsp;: <strong>KOOPLO</strong><br /><p>KOOPLO est n&eacute;e de la fusion d&rsquo;une des plus grande synergie mondiale de l&rsquo;Energie. Fort de son exp&eacute;rience internationale, le groupe KOOPLO a mis au point un syst&egrave;me de production &eacute;nerg&eacute;tique &agrave; bas co&ucirc;t. Cette innovation lui permet de se positionner en tant qu&rsquo;un s&eacute;rieux concurrent &agrave; la course au MCM.</p>",
+    "energy": "GEOTHERMIQUE",
+    "beginAt": "2036",
+    "investmentCost": 800,
+    "computer": 40000,
+    "power": "12 EXAHASH",
+    "dailyProfit": "38 MCM",
+    "profitPercent": "14.89%",
+    "partPrice": 100
+  }
+  
