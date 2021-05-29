@@ -34,10 +34,10 @@ const HeaderBtn = () => {
     <div className="header-btn-wrapper">
       <ul className="accounts d-none d-lg-flex">
         <li>
-          <Link to={process.env.PUBLIC_URL + "/login-register"}>Log in</Link>
+          <Link to={process.env.PUBLIC_URL + "/login-register"}>Connexion</Link>
         </li>
         <li className="active">
-          <Link to={process.env.PUBLIC_URL + "/login-register"}>Sign up</Link>
+          <Link to={process.env.PUBLIC_URL + "/login-register"}>Inscription</Link>
         </li>
       </ul>
       <div className="mobile-button-wrapper d-block d-lg-none text-right">

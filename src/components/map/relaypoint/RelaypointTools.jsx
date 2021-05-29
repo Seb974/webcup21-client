@@ -7,10 +7,10 @@ const RelaypointTools = ({ displayedRelaypoints, relayPointTooltip, setRelaypoin
     return (
         <>
             { displayedRelaypoints.map(relaypoint => {
-                const { id, metas } = relaypoint;
+                const { id, position } = relaypoint;
                 return <RelaypointMarker
                             key={ id }
-                            position={ metas.position } 
+                            position={ position } 
                             relaypoint={ relaypoint } 
                             setTooltip={ setRelaypointTooltip }
                         />

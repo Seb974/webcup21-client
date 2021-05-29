@@ -5,11 +5,11 @@ import { isDefined } from '../../../../helpers/utils';
 const RelaypointTooltip = ({ relaypoint }) => {
 
     return !isDefined(relaypoint) ? <></> : (
-        <Popup latitude={relaypoint.metas.position[0]} longitude={relaypoint.metas.position[1]} offsetLeft={10} offsetTop={-35}>
+        <Popup latitude={relaypoint.position[0]} longitude={relaypoint.position[1]} offsetLeft={10} offsetTop={-35}>
             <div className="text-center">
                 <p className="mb-0">{ relaypoint.name }</p>
-                <p className="mb-0 mt-0">{ relaypoint.metas.city }</p>
-                <small className="mt-0">(cliquez pour sélectionner)</small>
+                <p className="mb-0 mt-0">{ relaypoint.city }</p>
+                {/* <small className="mt-0">(cliquez pour sélectionner)</small> */}
             </div>
         </Popup>
     );
