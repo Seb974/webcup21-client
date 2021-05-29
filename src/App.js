@@ -20,90 +20,97 @@ import NotFound from "./pages/NotFound";
 import AboutBitcoin from "./pages/AboutBitcoin";
 import DataProvider from "./data/dataProvider/dataProvider";
 
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe("pk_test_51I4RT9KtG62ZyJyqGD3WG0rqQCXyzZirW9GhFVE4Moq8HsMcMcV8y42fTbYihbTUTfMugi6FzdBHuz1uOyr4G7If008xMpch8a");
+
 function App() {
   return (
-    <DataProvider>
-    <Router>
-      <ScrollToTop>
-        <Switch>
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL + "/"}`}
-            component={HomeFour}
-          />
-          {/* <Route
-            path={`${process.env.PUBLIC_URL + "/home-one"}`}
-            component={HomeOne}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/home-two"}`}
-            component={HomeTwo}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/home-three"}`}
-            component={HomeThree}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/home-four"}`}
-            component={HomeFour}
-          /> */}
-          <Route
-            path={`${process.env.PUBLIC_URL + "/about"}`}
-            component={About}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/about-bitcoin"}`}
-            component={AboutBitcoin}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/blog"}`}
-            component={Blog}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/blog-right-sidebar"}`}
-            component={BlogRightSidebar}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/blog-post"}`}
-            component={BlogPost}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/contact"}`}
-            component={Contact}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/service"}`}
-            component={Service}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/service-details"}`}
-            component={ServiceDetails}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/merchants"}`}
-            component={Merchants}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/team"}`}
-            component={Team}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/wallet"}`}
-            component={Wallet}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/login-register"}`}
-            component={LoginRegister}
-          />
-          <Route
-            path={`${process.env.PUBLIC_URL + "/not-found"}`}
-            component={NotFound}
-          />
-          <Route exact component={NotFound} />
-        </Switch>
-      </ScrollToTop>
-    </Router>
-    </DataProvider>
+    <Elements stripe={ stripePromise }>
+      <DataProvider>
+      <Router>
+        <ScrollToTop>
+          <Switch>
+            <Route
+              exact
+              path={`${process.env.PUBLIC_URL + "/"}`}
+              component={HomeFour}
+            />
+            {/* <Route
+              path={`${process.env.PUBLIC_URL + "/home-one"}`}
+              component={HomeOne}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/home-two"}`}
+              component={HomeTwo}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/home-three"}`}
+              component={HomeThree}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/home-four"}`}
+              component={HomeFour}
+            /> */}
+            <Route
+              path={`${process.env.PUBLIC_URL + "/about"}`}
+              component={About}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/about-bitcoin"}`}
+              component={AboutBitcoin}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/blog"}`}
+              component={Blog}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/blog-right-sidebar"}`}
+              component={BlogRightSidebar}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/blog-post"}`}
+              component={BlogPost}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/contact"}`}
+              component={Contact}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/service"}`}
+              component={Service}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/service-details"}`}
+              component={ServiceDetails}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/merchants"}`}
+              component={Merchants}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/team"}`}
+              component={Team}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/wallet"}`}
+              component={Wallet}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/login-register"}`}
+              component={LoginRegister}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL + "/not-found"}`}
+              component={NotFound}
+            />
+            <Route exact component={NotFound} />
+          </Switch>
+        </ScrollToTop>
+      </Router>
+      </DataProvider>
+    </Elements>
   );
 }
 

@@ -11,6 +11,7 @@ import CurrencyCalculationTwo from "../components/currency-calculations/Currency
 import HeroSliderFour from "../containers/hero-sliders/HeroSliderFour";
 import Map from "../components/map/Map";
 import FarmContext from "../contexts/FarmContext";
+import PaymentForm from "../components/payment/PaymentForm";
 
 const HomeFour = () => {
 
@@ -36,6 +37,12 @@ const HomeFour = () => {
         <WorkProcess />
         {/* counter up */}
         <Map displayedRelaypoints={ farms }/>
+        <PaymentForm
+            amount={ 149 }
+            name={ "Investir" }
+            available={ true }
+
+        />
         <CounterUp backgroundImage="/images/bg/4.jpg" />
         {/* currency calculation */}
         <CurrencyCalculationTwo />
