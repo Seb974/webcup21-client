@@ -6,7 +6,7 @@ import ParticleTwo from "../particles/ParticleTwo";
 const Breadcrumb = ({ title }) => {
   return (
     <div
-      className="ht__bradcaump__area"
+      className="ht__bradcaump__area bg-dark"
       style={{
         background: `rgba(0, 0, 0, 0) url(${process.env.PUBLIC_URL +
           "/images/bg/7.jpg"}) repeat scroll center center/105% 100%`

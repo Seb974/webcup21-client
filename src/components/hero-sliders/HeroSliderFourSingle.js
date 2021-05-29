@@ -24,7 +24,7 @@ const HeroSliderFourSingle = ({ data }) => {
                 className="slide__btn dg__btn btn--white"
                 to={process.env.PUBLIC_URL + data.url}
               >
-                Learn More
+                Découvrir le bitcoin réunnionnais
               </Link>
             </div>
           </div>

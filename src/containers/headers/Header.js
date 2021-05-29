@@ -23,6 +23,7 @@ const Header = ({ theme }) => {
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
+  console.log(theme);
   return (
     <header
       className={`dg__header header--absolute space-right-left ${
