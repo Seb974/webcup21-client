@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./helpers/ScrollToTop";
-import HomeOne from "./pages/HomeOne";
+import HomeOne from "./pages/MimitHome";
 import HomeTwo from "./pages/HomeTwo";
 import HomeThree from "./pages/HomeThree";
 import HomeFour from "./pages/HomeFour";

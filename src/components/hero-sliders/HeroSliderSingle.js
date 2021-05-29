@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Particle from "../particles/Particle";
 
 const HeroSliderOneSingle = ({ data }) => {
+  data.title = "Mimit'coins la cryptomonnaie régionale de la réunion"
   return (
     <div
       className="slide d-flex bg-image--1 align__center poss--relative"
@@ -20,11 +21,11 @@ const HeroSliderOneSingle = ({ data }) => {
                 className="slide__btn dg__btn btn--white"
                 to={process.env.PUBLIC_URL + data.url}
               >
-                Learn More
+                Découvrir son histoire
               </Link>
             </div>
           </div>
-          <div className="col-lg-5 col-md-5 col-sm-12 col-12">
+          {/* <div className="col-lg-5 col-md-5 col-sm-12 col-12">
             <div className="slider__fornt text-right">
               <img
                 src={process.env.PUBLIC_URL + data.image}
@@ -32,7 +33,7 @@ const HeroSliderOneSingle = ({ data }) => {
                 className="img-fluid"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* particle */}
