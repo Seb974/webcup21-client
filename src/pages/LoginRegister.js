@@ -7,12 +7,15 @@ import Nav from "react-bootstrap/Nav";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 import AuthContext from "../contexts/AuthContext";
 import AuthActions from "../services/AuthActions";
+import UserActions from "../services/UserActions";
 
 const LoginRegister = () => {
 
   const { setIsAuthenticated } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({username: '', password: ''});
-  const [error, setError] = useState("");
+  const defaultError = {name:"", email: "", password: "", confirmPassword: ""}
+  const [user, setUser] = useState({name:"", email: "", password: "", confirmPassword: ""});
+  const [errors, setErrors] = useState(defaultError);
 
   const handleChange = ({currentTarget}) => {
       setCredentials({...credentials, [currentTarget.name]: currentTarget.value});
@@ -22,20 +25,53 @@ const LoginRegister = () => {
     e.preventDefault();
     AuthActions.authenticate(credentials)
                .then(response => {
-                   setError("");
+                  setErrors(defaultError);
                    setIsAuthenticated(true);
                    window.location.replace('/');
                 })
                .catch(error => {
                    console.log(error);
-                   setError("Paramètres de connexion invalides")
+                   setErrors({...errors, name: "Paramètres de connexion invalides"})
                 });
   }
+
+    const handleChangeRegister = ({ currentTarget }) => {
+        setUser({...user, [currentTarget.name]: currentTarget.value});
+    };
+
+    const handleSubmitRegister = async e => {
+        e.preventDefault();
+        const apiErrors = {};
+        if (user.password !== user.confirmPassword) {
+            apiErrors.confirmPassword = "Les mots de passe saisis ne correspondent pas";
+            setErrors(apiErrors);
+            return ;
+        }
+        try {
+            UserActions.register(user)
+                      .then(response => window.location.replace('/'));
+            setErrors(defaultError);
+        } catch ( e ) {
+            if (e.response !== undefined) {
+                const { violations } = e.response.data;
+                if (violations) {
+                    violations.forEach(({propertyPath, message}) => {
+                        apiErrors[propertyPath] = message;
+                    });
+                    setErrors(apiErrors);
+                }
+            } else {
+                console.log(e);
+            }
+            //TODO : Flash notification d'erreur
+        }
+    }
+
 
   return (
     <Fragment>
       <MetaTags>
-        <title>Howard | Login</title>
+        <title>Login</title>
         <meta
           name="description"
           content="Login page of React JS Crypto Currency Template."
@@ -66,18 +102,12 @@ const LoginRegister = () => {
                       <div className="single__account">
                         <div className="input__box">
                           <span>Email Address</span>
-                          <input type="text" onChange={ handleChange } value={ credentials.username }/>
+                          <input type="text" name="username" onChange={ handleChange } value={ credentials.username }/>
                         </div>
                         <div className="input__box">
                           <span>Password</span>
-                          <input type="password" onChange={ handleChange } value={ credentials.password } />
+                          <input type="password" name="password" onChange={ handleChange } value={ credentials.password } />
                         </div>
-                        <Link
-                          className="forget__pass"
-                          href={process.env.PUBLIC_URL + "/"}
-                        >
-                          Lost your password?
-                        </Link>
                         <button className="account__btn" onClick={ handleSubmit }>Login</button>
                       </div>
                     </Tab.Pane>
@@ -85,21 +115,21 @@ const LoginRegister = () => {
                       <div className="single__account">
                         <div className="input__box">
                           <span>First Name</span>
-                          <input type="text" />
-                        </div>
-                        <div className="input__box">
-                          <span>Last Name</span>
-                          <input type="text" />
+                          <input type="text" name="name" onChange={ handleChangeRegister } value={ user.name }/>
                         </div>
                         <div className="input__box">
                           <span>Email address</span>
-                          <input type="email" />
+                          <input type="email" name="email" onChange={ handleChangeRegister } value={ user.email }/>
                         </div>
                         <div className="input__box">
                           <span>Password</span>
-                          <input type="password" />
+                          <input type="password" name="password" onChange={ handleChangeRegister } value={ user.password }/>
                         </div>
-                        <button className="account__btn">Register</button>
+                        <div className="input__box">
+                          <span>Confirm password</span>
+                          <input type="password" name="confirmPassword" onChange={ handleChangeRegister } value={ user.confirmPassword }/>
+                        </div>
+                        <button className="account__btn" onClick={ handleSubmitRegister }>Register</button>
                       </div>
                     </Tab.Pane>
                   </Tab.Content>
