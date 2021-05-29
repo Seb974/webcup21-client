@@ -18,9 +18,11 @@ import Wallet from "./pages/Wallet";
 import LoginRegister from "./pages/LoginRegister";
 import NotFound from "./pages/NotFound";
 import AboutBitcoin from "./pages/AboutBitcoin";
+import DataProvider from "./data/dataProvider/dataProvider";
 
 function App() {
   return (
+    <DataProvider>
     <Router>
       <ScrollToTop>
         <Switch>
@@ -101,6 +103,7 @@ function App() {
         </Switch>
       </ScrollToTop>
     </Router>
+    </DataProvider>
   );
 }
 
