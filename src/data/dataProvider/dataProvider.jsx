@@ -4,6 +4,7 @@ import MercureHub from '../../components/Mercure/MercureHub';
 import AuthContext from '../../contexts/AuthContext';
 import FarmContext from '../../contexts/FarmContext';
 import AuthActions from '../../services/AuthActions';
+import FarmActions from '../../services/FarmActions';
 
 const DataProvider = ({ children }) => {
 
@@ -12,7 +13,13 @@ const DataProvider = ({ children }) => {
     const [farms, setFarms] = useState([]);
     const [eventSource, setEventSource] = useState({});
 
-    useEffect(() => AuthActions.setErrorHandler(setCurrentUser, setIsAuthenticated),[]);
+    useEffect(() => {
+        AuthActions.setErrorHandler(setCurrentUser, setIsAuthenticated);
+        FarmActions
+            .findAll()
+            .then(response => setFarms(response));
+
+    },[]);
     useEffect(() => setCurrentUser(AuthActions.getCurrentUser()), [isAuthenticated]);
 
     return (
