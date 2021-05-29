@@ -1,5 +1,7 @@
 import React from "react";
 import BlogSidebar from "../../components/blog/BlogSidebar";
+import data from "../../data/blog-content/blog-content.json";
+import parserHtml from "html-react-parser";
 import { Link } from "react-router-dom";
 import { FaRss, FaPinterestP, FaVimeoV, FaGoogle } from "react-icons/fa";
 
@@ -8,54 +10,41 @@ const BlogPostContent = () => {
     <div className="dg__blog__area bg--white section-padding--xl">
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-md-12 col-sm-12 col-12">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="dg__blog__details right--sidebar">
               <div className="dg__blog__dtl">
-                <div className="thumb">
+                <div className="thumb d-block d-xs-none">
                   <img
-                    src={process.env.PUBLIC_URL + "/images/blog/list/bd3.jpg"}
+                    src={data.img} 
                     alt="blog images"
                   />
                 </div>
                 <div className="content">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est.
+                    {parserHtml(data.mainContent)}
                   </p>
                 </div>
               </div>
               <div className="dg__blog__dtl blog__related">
                 <div className="thumb">
                   <img
-                    src={process.env.PUBLIC_URL + "/images/blog/list/bd1.png"}
+                    src={data.leftImg}
                     alt="blog images"
+                    width="350"
+                    // height="287"
                   />
                 </div>
                 <div className="content">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est.
+                    {parserHtml(data.textRight)}
                   </p>
                 </div>
               </div>
               <blockquote>
-                I am a kind of paranoid in reverse. I suspect people of plotting
-                to make me happy.
-                <span>J. D. Salinger</span>
+                Le Mimit'Coin c'est génial. A moi la richesse !
+                <span>B. Narbe</span>
               </blockquote>
-              <p className="blog__pra">
+              {/* <p className="blog__pra">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -87,9 +76,9 @@ const BlogPostContent = () => {
                     <Link to={process.env.PUBLIC_URL + "/blog-post"}>Next</Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
               {/* Start Blog Author */}
-              <div className="blog__author">
+              {/* <div className="blog__author">
                 <div className="thumb">
                   <img
                     src={process.env.PUBLIC_URL + "/images/blog/comment/4.png"}
@@ -142,10 +131,10 @@ const BlogPostContent = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
               {/* End Blog Author */}
               {/* Start Blog Comment */}
-              <div className="blog__comment">
+              {/* <div className="blog__comment">
                 <h2 className="blog__title">Comments</h2>
                 <div className="comment">
                   <div className="thumb">
@@ -213,10 +202,10 @@ const BlogPostContent = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* End Blog Comment */}
               {/* Start Comment Form */}
-              <div className="comment__form__area">
+              {/* <div className="comment__form__area">
                 <h2 className="blog__title">Leave a Comment</h2>
                 <form action="#">
                   <div className="comment__box">
@@ -232,14 +221,14 @@ const BlogPostContent = () => {
                     </div>
                   </div>
                 </form>
-              </div>
+              </div> */}
               {/* End Comment Form */}
             </div>
           </div>
-          <div className="col-lg-4 col-md-12 col-sm-12 col-12 sm__mt--40 md__mt--40">
+          {/* <div className="col-lg-4 col-md-12 col-sm-12 col-12 sm__mt--40 md__mt--40"> */}
             {/* sidebar */}
-            <BlogSidebar />
-          </div>
+            {/* <BlogSidebar />
+          </div> */}
         </div>
       </div>
     </div>

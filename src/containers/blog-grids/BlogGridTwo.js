@@ -10,7 +10,7 @@ const BlogGridTwo = () => {
         <div className="row">
           <div className="col-lg-12">
             {/* section title */}
-            <SectionTitleTwo title="Latest News" />
+            <SectionTitleTwo title="Quelques fermes de minage ..." />
           </div>
         </div>
         <div className="row mt--10">

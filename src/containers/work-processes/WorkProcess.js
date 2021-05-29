@@ -10,7 +10,7 @@ const WorkProcess = () => {
         <div className="row">
           <div className="col-lg-12">
             {/* section title */}
-            <SectionTitleTwo title="Working Process" />
+            <SectionTitleTwo title="Comment ça marche ?" />
           </div>
         </div>
         <div className="row mt--10">

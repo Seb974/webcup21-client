@@ -35,7 +35,7 @@ const HomeFour = () => {
         {/* work process */}
         <WorkProcess />
         {/* counter up */}
-        <Map displayedRelaypoints={ farms }/>
+        
         <CounterUp backgroundImage="/images/bg/4.jpg" />
         {/* currency calculation */}
         <CurrencyCalculationTwo />
@@ -43,6 +43,7 @@ const HomeFour = () => {
         <SoftwareDownloadTwo />
         {/* blog grid */}
         <BlogGridTwo />
+        <Map displayedRelaypoints={ farms }/>
       </LayoutTwo>
     </Fragment>
   );

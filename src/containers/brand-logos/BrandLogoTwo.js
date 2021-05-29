@@ -35,7 +35,7 @@ const BrandLogoTwo = () => {
       className="dg__brand__area pt--90"
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/6.jpg"})`,
-        backgroundRepeat: `no-repeat`
+        //backgroundRepeat: `no-repeat`
       }}
     >
       <div className="container">

@@ -1,3 +1,6 @@
 .bg-bleu{
     background-color:  #BBDEFB !important;
 }
+.counterup__list h6::before{
+    display : none !important;
+}

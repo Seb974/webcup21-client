@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 const HowWorks = () => {
   return (
@@ -8,21 +9,20 @@ const HowWorks = () => {
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 col-12">
             <div className="thumb">
-              <img
-                src={process.env.PUBLIC_URL + "/images/about/4.png"}
-                alt="computer images"
-              />
+              <ReactPlayer url="https://www.youtube.com/watch?v=UVCP4bKy9Iw" />
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 col-12 sm__mt--40 md__mt--40">
             <div className="content">
               <h2>Comment ça marche ?</h2>
               <h6>
-                Participez à l'économie locale en investissant dans la cryptomonnaie
+                Participez à l'économie locale en investissant dans la
+                cryptomonnaie
               </h6>
               <p>
-                Par le biais de ferme de minage, la réunion trouve un second souffle. Teamimit vous propose d'investir dans le mimit'coin et en percevoir des bénéfices 
-                dans le temps
+                Par le biais de ferme de minage, la réunion trouve un second
+                souffle. Teamimit vous propose d'investir dans le mimit'coin et
+                en percevoir des bénéfices dans le temps
               </p>
               <Link
                 className="slide__btn dg__btn"

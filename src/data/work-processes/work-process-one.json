@@ -1,22 +1,22 @@
 [
   {
     "id": "1",
-    "title": "Register Fot BTC",
-    "excerpt": "There are many variations of passages of Lorem Ipsum available.",
+    "title": "Acheter",
+    "excerpt": "Achetez des parts dans nos fermes de minage",
     "icon": "/images/icons/8.png",
     "url": "/contact"
   },
   {
     "id": "2",
-    "title": "Open Creypto Wallet",
-    "excerpt": "There are many variations of passages of Lorem Ipsum available.",
+    "title": "Gérer vos ressources",
+    "excerpt": "Gérez votre portefeuille de cryptomonnaie en un click ",
     "icon": "/images/icons/9.png",
     "url": "/contact"
   },
   {
     "id": "3",
-    "title": "Start Working WIth BTC",
-    "excerpt": "There are many variations of passages of Lorem Ipsum available.",
+    "title": "Commencer",
+    "excerpt": "Gagnez de la monnaie virtuel grâce aux rendements de nos fermes",
     "icon": "/images/icons/10.png",
     "url": "/contact"
   }
