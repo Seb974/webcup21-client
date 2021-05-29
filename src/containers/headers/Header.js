@@ -31,11 +31,11 @@ const Header = ({ theme }) => {
         <div className="row align-items-center">
           <div className="col-lg-2 col-xl-2 col-6">
             {/* logo */}
-            <Logo
+            {/* <Logo
               image={
                 theme === "white" ? "/images/logo/2.png" : "/images/logo/1.png"
               }
-            />
+            /> */} <h2 className="text-white fs-2 text">Teamimit.re</h2>
           </div>
           <div className="col-lg-7 col-xl-8 d-none d-lg-block">
             {/* navigation */}
