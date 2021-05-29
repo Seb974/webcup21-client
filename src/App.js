@@ -29,9 +29,9 @@ function App() {
           <Route
             exact
             path={`${process.env.PUBLIC_URL + "/"}`}
-            component={HomeOne}
+            component={HomeFour}
           />
-          <Route
+          {/* <Route
             path={`${process.env.PUBLIC_URL + "/home-one"}`}
             component={HomeOne}
           />
@@ -46,7 +46,7 @@ function App() {
           <Route
             path={`${process.env.PUBLIC_URL + "/home-four"}`}
             component={HomeFour}
-          />
+          /> */}
           <Route
             path={`${process.env.PUBLIC_URL + "/about"}`}
             component={About}

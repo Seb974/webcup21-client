@@ -7,10 +7,10 @@ const Navigation = () => {
     <nav className="mainmenu__nav">
       <ul className="mainmenu">
         <li className="drop">
-          <Link to={process.env.PUBLIC_URL + "/"}>
+          {/* <Link to={process.env.PUBLIC_URL + "/"}>
             Home <IoIosArrowDown />
-          </Link>
-          <ul className="dropdown">
+          </Link> */}
+          {/* <ul className="dropdown">
             <li>
               <Link to={process.env.PUBLIC_URL + "/home-one"}>Home One</Link>
             </li>
@@ -25,7 +25,13 @@ const Navigation = () => {
             <li>
               <Link to={process.env.PUBLIC_URL + "/home-four"}>Home Four</Link>
             </li>
-          </ul>
+          </ul> */}
+        </li>
+        <li className="drop">
+          <Link to={process.env.PUBLIC_URL + "/blog"}>
+            News 
+            {/* <IoIosArrowDown /> */}
+          </Link>
         </li>
         <li className="drop">
           <Link to={process.env.PUBLIC_URL + "/service"}>
@@ -42,11 +48,8 @@ const Navigation = () => {
             </li>
           </ul>
         </li>
-        <li className="drop">
-          <Link to={process.env.PUBLIC_URL + "/blog"}>
-            News <IoIosArrowDown />
-          </Link>
-          <ul className="dropdown">
+        
+          {/* <ul className="dropdown">
             <li>
               <Link to={process.env.PUBLIC_URL + "/blog"}>Blog Page</Link>
             </li>
@@ -60,8 +63,8 @@ const Navigation = () => {
                 Blog Details
               </Link>
             </li>
-          </ul>
-        </li>
+          </ul> */}
+        {/* </li> */}
         <li className="drop">
           <Link to={process.env.PUBLIC_URL + "#/"}>
             Pages <IoIosArrowDown />
@@ -89,14 +92,14 @@ const Navigation = () => {
                 Login / Register
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
-            </li>
+            </li> */}
           </ul>
         </li>
-        <li>
+        {/* <li>
           <Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

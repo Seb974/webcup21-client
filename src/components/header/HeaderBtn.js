@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
+import AuthContext from "../../contexts/AuthContext";
+import AuthActions from "../../services/AuthActions";
 
 const HeaderBtn = () => {
+  const { isAuthenticated, setIsAuthenticated, setCurrentUser } = useContext(AuthContext);
+
   const triggerMobileMenu = () => {
     const offcanvasMobileMenu = document.querySelector(
       "#offcanvas-mobile-menu"
     );
     offcanvasMobileMenu.classList.add("active");
   };
-  return (
+
+  const handleLogout = () => {
+    AuthActions.logout()
+               .then(response => {
+                   setIsAuthenticated(false);
+                   setCurrentUser(AuthActions.getCurrentUser());
+               });
+  }
+
+  return isAuthenticated ? 
+    <div className="header-btn-wrapper">
+      <ul className="accounts d-none d-lg-flex">
+        <li>
+          <a className="active" href="#" onClick={ handleLogout }>Log out</a>
+        </li>
+      </ul>
+    </div>
+  :
     <div className="header-btn-wrapper">
       <ul className="accounts d-none d-lg-flex">
         <li>
@@ -28,7 +49,6 @@ const HeaderBtn = () => {
         </button>
       </div>
     </div>
-  );
 };
 
 export default HeaderBtn;
