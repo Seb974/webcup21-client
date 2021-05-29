@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 // import ProductsContext from '../../contexts/ProductsContext';
 import MercureHub from '../../components/Mercure/MercureHub';
 import AuthContext from '../../contexts/AuthContext';
+import FarmContext from '../../contexts/FarmContext';
 import AuthActions from '../../services/AuthActions';
 
 const DataProvider = ({ children }) => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(AuthActions.isAuthenticated());
     const [currentUser, setCurrentUser] = useState(AuthActions.getCurrentUser());
-    const [products, setProducts] = useState([]);
+    const [farms, setFarms] = useState([]);
     const [eventSource, setEventSource] = useState({});
 
     useEffect(() => AuthActions.setErrorHandler(setCurrentUser, setIsAuthenticated),[]);
@@ -16,11 +17,11 @@ const DataProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={ {isAuthenticated, setIsAuthenticated, currentUser, setCurrentUser, eventSource, setEventSource} }>
-        {/* <ProductsContext.Provider value={ {products, setProducts} }> */}
+        <FarmContext.Provider value={ {farms, setFarms} }>
             {/* <MercureHub> */}
                 { children }
             {/* </MercureHub> */}
-        {/* </ProductsContext.Provider> */}
+        </FarmContext.Provider>
         </AuthContext.Provider>
     );
 }
