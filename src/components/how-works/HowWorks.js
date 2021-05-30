@@ -13,8 +13,8 @@ const HowWorks = () => {
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 col-12 sm__mt--40 md__mt--40">
-            <div className="content">
-              <h2>Comment ça marche ?</h2>
+            <div className="">
+              <h2>C'est le moment d'investir </h2>
               <h6>
                 Participez à l'économie locale en investissant dans la
                 cryptomonnaie

@@ -14,7 +14,7 @@ const LayoutTwo = ({ children, theme }) => {
       <BrandLogoTwo />
       {/* newsletter */}
       {/* <Newsletter /> */}
-      <Footer theme={theme} />
+      <Footer theme={"dark"} />
     </Fragment>
   );
 };

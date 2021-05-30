@@ -34,7 +34,7 @@ const BrandLogoTwo = () => {
     <div
       className="dg__brand__area pt--90"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/4.jpg"})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/images/bg/9.jpg"})`,
         //backgroundRepeat: `no-repeat`
       }}
     >
@@ -44,7 +44,8 @@ const BrandLogoTwo = () => {
             {/* section title */}
             <SectionTitleThree
               title="Nous travaillons ensemble"
-              text="Nos partenaires participent comme vous au financement de cette nouvelle crypto-monnaie"
+              text="Nos partenaires participent comme vous au financement de cette nouvelle crypto-monnaie locale"
+              theme="text-dark"
             />
           </div>
         </div>

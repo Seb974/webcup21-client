@@ -17,7 +17,7 @@ const Service = () => {
       </MetaTags>
       <LayoutTwo theme="white">
         {/* breadcrumb */}
-        <Breadcrumb title="SERVICES WE PROVIDE" />
+        <Breadcrumb title="Le service que nous proposons" />
         {/* service content */}
         <ServiceContent />
         {/* service list */}
