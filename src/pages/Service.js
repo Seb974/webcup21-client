@@ -21,7 +21,7 @@ const Service = () => {
         <Breadcrumb title="Le service que nous proposons" />
         {/* service content */}
         <ServiceContent />
-        <ServiceContentTwo />
+        {/* <ServiceContentTwo /> */}
         {/* service list */}
         <ServiceList />
       </LayoutTwo>

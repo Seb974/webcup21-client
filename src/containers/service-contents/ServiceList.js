@@ -12,7 +12,7 @@ const ServiceList = () => {
             {/* section title */}
             <SectionTitleSix
               title="Nos services"
-              text="Notre service est assuré par une équipes de consultants confirmés, spécialisés dans la production de cryptomonnaies."
+              text="Notre service est assurée par une équipe de consultants confirmés, spécialisés dans la production de cryptomonnaie."
             />
           </div>
         </div>

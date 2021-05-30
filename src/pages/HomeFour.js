@@ -40,15 +40,15 @@ const HomeFour = () => {
         {/* work process */}
         <WorkProcess />
         {/* counter up */}
-        <Map displayedRelaypoints={farms} />
-        <PaymentForm amount={149} name={"Investir"} available={true} />
+        {/* <Map displayedRelaypoints={farms} /> */}
+        {/* <PaymentForm amount={149} name={"Investir"} available={true} /> */}
         <CounterUp backgroundImage="/images/bg/4.jpg" />
         {/* currency calculation */}
-        <CurrencyCalculationTwo />
+        {/* <CurrencyCalculationTwo /> */}
         {/* software download */}
-        <SoftwareDownloadTwo />
+        {/* <SoftwareDownloadTwo /> */}
         {/* blog grid */}
-        <BlogGridTwo />
+        {/* <BlogGridTwo /> */}
         <Map displayedRelaypoints={farms} />
       </LayoutTwo>
     </Fragment>

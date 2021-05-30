@@ -4,3 +4,7 @@
 .counterup__list h6::before{
     display : none !important;
 }
+
+.title__with__border::before{
+    display: none !important;
+}

@@ -10,7 +10,7 @@ const ServiceListSingle = ({ data }) => {
       </div>
       <div className="content">
         <h4>
-          <Link to={process.env.PUBLIC_URL + data.url}>{data.title}</Link>
+          <Link to="">{data.title}</Link>
         </h4>
         <p>{data.text}</p>
       </div>

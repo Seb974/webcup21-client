@@ -11,7 +11,7 @@ const ServiceContent = () => {
           <div className="col-lg-7 col-md-12 col-sm-12 col-12">
             <div className="dg__secure__inner">
               {/* section title */}
-              <SectionTitleFour title="Nout Kapital i rest Lokal" />
+              <SectionTitleFour title="Nout Kapital i rest lokal" />
               <p>
                { ParserHtml(data.mainText) } 
               </p>
