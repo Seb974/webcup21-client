@@ -7,15 +7,17 @@ import parserHtml from "html-react-parser";
 import { Link } from "react-router-dom";
 import { FaRss, FaPinterestP, FaVimeoV, FaGoogle } from "react-icons/fa";
 import FarmContext from "../../contexts/FarmContext";
+import { isDefined } from "../../helpers/utils";
+import api from "../../config/api";
 
 const BlogPostContent = () => {
-
+  const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
   const inputPart = useRef();
   const [price, setPrice] = useState(0)
   const { farms } = useContext(FarmContext);
-  const farm = farms[0];
+  const farm = farms.find(farm => farm.id === parseInt(id));
   const [partLock, setPartLock] = useState(0);
-  const [totalPart, setTotalPart] = useState(farm.investmentCost/farm.partPrice);
+  const [totalPart, setTotalPart] = useState( isDefined(farm) && isDefined(farm.investmentCost) ?  farm.investmentCost/farm.partPrice : 0 );
   const [partUsed, setPartUsed] = useState(3);
 
   const handleClick = (number) => {
@@ -29,30 +31,28 @@ const BlogPostContent = () => {
   }
   const handleChange = ({currentTarget}) => {
     const val = (currentTarget.value == undefined) ?  0 : currentTarget.value;
-    
-    console.log(currentTarget.value);
     const p = (parseFloat(currentTarget.value) <= (totalPart - partUsed)) ? parseFloat(currentTarget.value) : 0;
     setPartLock(p);
     setPrice(p*farm.partPrice);
   }
 
-  return (
+  return !isDefined(farm) ? <></> : (
     <div className="dg__blog__area bg--white section-padding--xl">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-12">
             <div className="card">
-              <div className="card-header">{farm.name}</div>
+              <div className="card-header">{ farm.name }</div>
               <div className="card-body">
-                <h5 className="card-title">{farm.name}</h5>
+                <h5 className="card-title">{ farm.name }</h5>
                 <div className="row">
                   <div className="col-lg-5 col-md-12 col-sm-12 col-12">
                     {" "}
-                    <img src={data.img} alt="blog images" width="400" />
+                    <img  src={isDefined(farm.picture) ? api.API_DOMAIN + "/uploads/pictures/" + farm.picture.filePath : data.img} alt="blog images" width="400" />
                   </div>
                   <div className="col-lg-5 col-md-12 col-sm-12 col-12">
                     <h2 className="mb-0">Participer au financement</h2>
-                    <p className="mb-0">Prix de la part : {farm.partPrice + " €"}</p>
+                    <p className="mb-0">Prix de la part : { farm.partPrice + " €" }</p>
                     <form action="">
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
@@ -136,13 +136,13 @@ const BlogPostContent = () => {
                     <th className="px-4" scope="row">
                       Type d'énergie
                     </th>
-                    <td>{farm.energy}</td>
+                    <td>{ farm.energy }</td>
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">
                       Début des travaux
                     </th>
-                    <td>{farm.beginAt}</td>
+                    <td>{ farm.beginAt }</td>
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">
