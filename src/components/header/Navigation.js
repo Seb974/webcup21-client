@@ -28,16 +28,11 @@ const Navigation = () => {
           </ul> */}
         </li>
         <li className="drop">
-          <Link to={process.env.PUBLIC_URL + "/blog"}>
-            Nos fermes 
+          <Link to={process.env.PUBLIC_URL + "/service"}>
+            Le Mimit'Coin 
             {/* <IoIosArrowDown /> */}
           </Link>
-        </li>
-        <li className="drop">
-          <Link to={process.env.PUBLIC_URL + "/service"}>
-            Le Mimit'Coin <IoIosArrowDown />
-          </Link>
-          <ul className="dropdown">
+          {/* <ul className="dropdown">
             <li>
               <Link to={process.env.PUBLIC_URL + "/service"}>Service Page</Link>
             </li>
@@ -46,9 +41,14 @@ const Navigation = () => {
                 Service Details
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </li>
-        
+        <li className="drop">
+          <Link to={process.env.PUBLIC_URL + "/blog"}>
+            Nos fermes 
+            {/* <IoIosArrowDown /> */}
+          </Link>
+        </li>
           {/* <ul className="dropdown">
             <li>
               <Link to={process.env.PUBLIC_URL + "/blog"}>Blog Page</Link>
@@ -65,7 +65,7 @@ const Navigation = () => {
             </li>
           </ul> */}
         {/* </li> */}
-        <li className="drop">
+        {/* <li className="drop">
           <Link to={process.env.PUBLIC_URL + "#/"}>
             Pages <IoIosArrowDown />
           </Link>
@@ -92,11 +92,11 @@ const Navigation = () => {
                 Connexion / S'enregistrer
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
-            </li> */}
+            </li>
           </ul>
-        </li>
+        </li> */}
         {/* <li>
           <Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link>
         </li> */}
