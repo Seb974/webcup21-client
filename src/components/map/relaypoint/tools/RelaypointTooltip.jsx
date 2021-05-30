@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Popup } from 'react-map-gl';
+import { Link } from 'react-router-dom';
 import { isDefined } from '../../../../helpers/utils';
 
 const RelaypointTooltip = ({ relaypoint }) => {
@@ -9,7 +10,7 @@ const RelaypointTooltip = ({ relaypoint }) => {
             <div className="text-center">
                 <p className="mb-0">{ relaypoint.name }</p>
                 <p className="mb-0 mt-0">{ relaypoint.city }</p>
-                {/* <small className="mt-0">(cliquez pour sélectionner)</small> */}
+                <small className="mt-0">cliquez pour visiter</small>
             </div>
         </Popup>
     );
