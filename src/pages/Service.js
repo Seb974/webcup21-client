@@ -4,6 +4,7 @@ import LayoutTwo from "../layouts/LayoutTwo";
 import Breadcrumb from "../components/breadcrumbs/Breadcrumb";
 import ServiceContent from "../components/service-contents/ServiceContent";
 import ServiceList from "../containers/service-contents/ServiceList";
+import ServiceContentTwo from "../components/service-contents/ServiceContentTwo";
 
 const Service = () => {
   return (
@@ -20,6 +21,7 @@ const Service = () => {
         <Breadcrumb title="Le service que nous proposons" />
         {/* service content */}
         <ServiceContent />
+        <ServiceContentTwo />
         {/* service list */}
         <ServiceList />
       </LayoutTwo>
