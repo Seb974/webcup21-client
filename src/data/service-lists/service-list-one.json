@@ -3,14 +3,14 @@
     "id": "1",
     "icon": "/images/service/icon/1.png",
     "title": "Service simple et sécurisé",
-    "text": "Notre service est assuré par une équipes de consultants confirmés, spécialisés dans la production de cryptomonnaies.",
+    "text": "Sauvez votre capital en investissant dans la crypto-monnaie.",
     "url": "/service-details"
   },
   {
     "id": "2",
     "icon": "/images/service/icon/2.png",
-    "title": "Service accessible en temps réel",
-    "text": "Suivez l’évolution de vos investissement en temps réel",
+    "title": "Supervision de votre investissement",
+    "text": "Suivez l’évolution de vos investissement et le rendement de chacune des fermes dans lesquelles vous avez investi",
     "url": "/service-details"
   },
 
@@ -18,7 +18,7 @@
     "id": "5",
     "icon": "/images/service/icon/5.png",
     "title": "Service client",
-    "text": "Equipe technique disponible 24h/24h",
+    "text": "Equipe technique disponible 24h/24h et 7jours sur  7 pour vous garantir un meilleur délais de réponse à vos questions",
     "url": "/service-details"
   }
 

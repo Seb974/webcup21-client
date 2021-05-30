@@ -11,7 +11,7 @@ const BrandLogoSingle = ({ data, sliderClass }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={process.env.PUBLIC_URL + data.image} alt="brand images" />
+        <img src={process.env.PUBLIC_URL + data.image} alt="brand images" height="50"/>
       </a>
     </li>
   );

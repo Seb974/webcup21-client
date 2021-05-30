@@ -11,10 +11,8 @@ const ServiceList = () => {
           <div className="col-lg-12">
             {/* section title */}
             <SectionTitleSix
-              title="Our Services"
-              text="There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour."
+              title="Nos services"
+              text="Notre service est assuré par une équipes de consultants confirmés, spécialisés dans la production de cryptomonnaies."
             />
           </div>
         </div>
