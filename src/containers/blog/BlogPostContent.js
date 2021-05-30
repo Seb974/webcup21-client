@@ -1,18 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import BlogSidebar from "../../components/blog/BlogSidebar";
 import data from "../../data/blog-content/blog-content.json";
-import farm from "../../data/blog-content/blog-content-api.json";
+// import farm from "../../data/blog-content/blog-content-api.json";
 import { ProgressBar } from "react-bootstrap";
 import parserHtml from "html-react-parser";
 import { Link } from "react-router-dom";
 import { FaRss, FaPinterestP, FaVimeoV, FaGoogle } from "react-icons/fa";
+import FarmContext from "../../contexts/FarmContext";
 
 const BlogPostContent = () => {
+
   const inputPart = useRef();
   const [price, setPrice] = useState(0)
+  const { farms } = useContext(FarmContext);
+  const farm = farms[0];
   const [partLock, setPartLock] = useState(0);
   const [totalPart, setTotalPart] = useState(farm.investmentCost/farm.partPrice);
   const [partUsed, setPartUsed] = useState(3);
+
   const handleClick = (number) => {
     if((parseFloat(inputPart.current.value) + number) < 0){
       setPartLock(0);
@@ -20,7 +25,7 @@ const BlogPostContent = () => {
       const p = parseFloat(inputPart.current.value);
       ((parseFloat(inputPart.current.value) + number) <= (totalPart - partUsed)) ? setPartLock(p   + number) : setPartLock(p);
       setPrice((p + number)*farm.partPrice);
-    }    
+    }
   }
   return (
     <div className="dg__blog__area bg--white section-padding--xl">
