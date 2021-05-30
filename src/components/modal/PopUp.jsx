@@ -22,7 +22,7 @@ const PopUp = ({data}) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Profitez des parts que vous vends la sociétéafin de pouvoir en degager des bénéfices et plein d'autre avantage ! 
+          <p>Profitez des parts que vous vends la société afin de pouvoir en degager des bénéfices et plein d'autre avantage ! 
           </p>
           <p className="mb-0">Gain potentiel : <span className="text-success"> + {data.profitPercent * 100} % </span> </p>
           <p className="mb-0">Type d'énergie : <strong>{data.energy} </strong></p>

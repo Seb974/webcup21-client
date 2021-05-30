@@ -134,7 +134,7 @@ const PaymentForm = ({ amount, name, available }) => {
 
     return (
         <>
-        <Button href="#" onClick={ handleShow } disabled={ !available }>{ name }</Button>
+        <Button href="#" className="btn btn-dark" onClick={ handleShow } disabled={ !available }>{ name }</Button>
         <Modal show={ show } onHide={ handleClose } backdrop="static" size="md" aria-labelledby="contained-modal-title-vcenter" centered id="payment-modal">
             <Modal.Header closeButton={ !processing && !loading }>
                 <Modal.Title>{loading ? "Paiement" : <>Paiement de {amount.toFixed(2).replace('.', ',')} <i className="fas fa-cat"></i></> } </Modal.Title>     
