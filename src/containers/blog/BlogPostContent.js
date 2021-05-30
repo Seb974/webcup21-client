@@ -9,33 +9,38 @@ import { FaRss, FaPinterestP, FaVimeoV, FaGoogle } from "react-icons/fa";
 import FarmContext from "../../contexts/FarmContext";
 import { isDefined } from "../../helpers/utils";
 import api from "../../config/api";
+import PaymentForm from "../../components/payment/PaymentForm";
 
 const BlogPostContent = () => {
   const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  const [dispo, setDispo] = useState(false);
   const inputPart = useRef();
   const [price, setPrice] = useState(0)
   const { farms } = useContext(FarmContext);
   const farm = farms.find(farm => farm.id === parseInt(id));
   const [partLock, setPartLock] = useState(0);
-  const [totalPart, setTotalPart] = useState( isDefined(farm) && isDefined(farm.investmentCost) ?  farm.investmentCost/farm.partPrice : 0 );
-  const [partUsed, setPartUsed] = useState(3);
+  const [partUsed, setPartUsed] = useState(Math.floor(Math.random()*10000) + 1000);
 
+  
   const handleClick = (number) => {
     if((parseFloat(inputPart.current.value) + number) < 0){
       setPartLock(0);
+      setDispo(false);
     }else {
       const p = parseFloat(inputPart.current.value);
-      ((parseFloat(inputPart.current.value) + number) <= (totalPart - partUsed)) ? setPartLock(p   + number) : setPartLock(p);
+      
+      ((parseFloat(inputPart.current.value) + number) <= ((farm.investmentCost / farm.partPrice) - partUsed)) ? setPartLock(p   + number) : setPartLock(p);
       setPrice((p + number)*farm.partPrice);
+      setDispo(true);
     }
   }
   const handleChange = ({currentTarget}) => {
     const val = (currentTarget.value == undefined) ?  0 : currentTarget.value;
-    const p = (parseFloat(currentTarget.value) <= (totalPart - partUsed)) ? parseFloat(currentTarget.value) : 0;
+    const p = (parseFloat(currentTarget.value) <= ((farm.investmentCost / farm.partPrice) - partUsed)) ? parseFloat(currentTarget.value) : 0;
     setPartLock(p);
     setPrice(p*farm.partPrice);
+    setDispo(p != 0 ? true : false);
   }
-
   return !isDefined(farm) ? <></> : (
     <div className="dg__blog__area bg--white section-padding--xl">
       <div className="container">
@@ -103,20 +108,19 @@ const BlogPostContent = () => {
                         </span>
                       </div>
                       <div className="mb-2">  
-                      <span className="text-success"> Part vendu : {partUsed} </span>
-                      <span className="text-dark">- Part restant : {totalPart - partUsed - partLock} </span>
+                      <span className="text-dark"> Part déjà vendu : {partUsed} /  {farm.investmentCost / farm.partPrice} </span>
                         <ProgressBar>
                           <ProgressBar
                             striped
                             variant="success"
-                            now={(partUsed*100/totalPart)}
+                            now={(partUsed*100/(farm.investmentCost / farm.partPrice))}
                             key={1}
                           />
-                          <ProgressBar variant="secondary" now={partLock*100/totalPart} key={2} />
+                          <ProgressBar variant="secondary" now={partLock*100/(farm.investmentCost / farm.partPrice)} key={2} />
                         </ProgressBar>
                         {partLock > 0 && <span className="fs-6 text-dark mb-0">La barre grise représente les parts que vous êtes en train de réserver</span> }
                       </div>
-                      <button className="btn btn-dark"> Investir </button>
+                      <PaymentForm name="Investir" amount={price} available={dispo} />
                     </form>
                   </div>
                 </div>
@@ -177,7 +181,7 @@ const BlogPostContent = () => {
                       {" "}
                       Bénéfice %{" "}
                     </th>
-                    <td className="text-success">{"+" + farm.profitPercent + " %"}</td>
+                    <td className="text-success">{"+" + farm.profitPercent*100 + " %"}</td>
                   </tr>
                   <tr>
                     <th className="px-4" scope="row">
